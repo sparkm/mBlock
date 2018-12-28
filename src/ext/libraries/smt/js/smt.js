@@ -34,12 +34,6 @@
 		On:1,
 		Off:0
 	};
-	var shutterStatus = {
-		Press:1,
-		Release:0,
-		'Focus On':3,
-		'Focus Off':2
-	};
 	var axis = {
 		'X-Axis':1,
 		'Y-Axis':2,
@@ -117,38 +111,6 @@
 		}
 		runPackage(8,port,slot,ledIndex=="all"?0:ledIndex,red,green,blue);
 	};
-	ext.showCharacters = function(port,x,y,message){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		message = message.toString();
-		runPackage(41,port,1,6,3,_util.short2array(x),_util.short2array(7-y),message.length,_util.string2array(message));
-	}
-	ext.showTime = function(port,hour,point,min){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		runPackage(41,port,3,6,point==":"?1:0,_util.short2array(hour),_util.short2array(min));
-	}
-	ext.showDraw = function(port,x,y,bytes){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		runPackageForFace(41,port,2,6,bytes.length,_util.short2array(x),_util.short2array(y),bytes.length);
-      _device.send(bytes);
-	};
-	function runPackageForFace(){
-		var bytes = [0xff, 0x55, 0, 0, 2];
-		for(var i=0;i<arguments.length;i++){
-			if(arguments[i].constructor == "[class Array]"){
-				bytes = bytes.concat(arguments[i]);
-			}else{
-				bytes.push(arguments[i]);
-			}
-		}
-		bytes[2] = bytes.length+13;
-		_device.send(bytes);
-	}
 	ext.getUltrasonic = function(nextID,port){
 		var deviceId = 1;
 		if(typeof port=="string"){
@@ -176,13 +138,6 @@
 			ax = axis[ax];
 		}
 		getPackage(nextID,deviceId,0,ax);
-    };
-    ext.gatCompass = function(nextID,port){
-    	var deviceId = 26;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
     };
     var startTimer = 0;
     ext.getTimer = function(nextID){
