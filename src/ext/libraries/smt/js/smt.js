@@ -109,21 +109,6 @@
 		}
         runPackage(11,port,slot,angle);
     };
-	ext.runStepperMotor = function(port, speed, distance){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		runPackage(40,port,_util.short2array(speed),_util.int2array(distance));
-	};
-	ext.runEncoderMotor = function(port, slot, speed, distance){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		if(typeof slot=="string"){
-			slot = slots[slot];
-		}
-		runPackage(12,0x8,slot,_util.short2array(speed),_util.float2array(distance));
-	};
 	ext.runSevseg = function(port,display){
 		if(typeof port=="string"){
 			port = ports[port];
