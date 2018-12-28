@@ -254,30 +254,6 @@
 		}
 		getPackage(nextID,deviceId,0,ax);
     };
-    ext.getHumiture = function(nextID,port,valueType){
-    	var deviceId = 23;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		if(typeof valueType=="string"){
-			valueType = ("humidity" == valueType) ? 0 : 1;
-		}
-		getPackage(nextID,deviceId,port,valueType);
-    };
-    ext.getFlame = function(nextID,port){
-   		var deviceId = 24;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
-    };
-    ext.getGas = function(nextID,port){
-    	var deviceId = 25;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
-    };
     ext.gatCompass = function(nextID,port){
     	var deviceId = 26;
 		if(typeof port=="string"){
