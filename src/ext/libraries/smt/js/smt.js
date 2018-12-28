@@ -130,12 +130,6 @@
 		}
 		runPackage(3,port,switchStatus[status]);
 	};
-	ext.runShutter = function(port,status){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		runPackage(20,port,shutterStatus[status]);
-	};
 	ext.showCharacters = function(port,x,y,message){
 		if(typeof port=="string"){
 			port = ports[port];

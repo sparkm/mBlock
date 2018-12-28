@@ -22,9 +22,6 @@
 		["w", "set light sensor %d.blackPorts led as %d.switch","runLightsensor", "Port7", "On",
 		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeLightSensor lightsensor_{0}({0});\n","work":"lightsensor_{0}.dWrite1({1});\n","loop":""}],
 		
-		["w", "set camera shutter %d.bluePorts as %d.shutter","runShutter","Port3", "Press",
-		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeShutter shutter_{0}({0});\n","work":"shutter_{0}.setState({1});\n","loop":""}],
-		
 		["-"],
 		
 		["R", "ultrasonic sensor %d.whitePorts distance","getUltrasonic","Port3",
@@ -95,7 +92,6 @@
 		"GyroAxis":["X-Axis","Y-Axis","Z-Axis"],
 		"digital":["LOW","HIGH"],
 		"switch":["Off","On"],
-		"shutter":["Press","Release","Focus On","Focus Off"],
 		"index":["all",1,2,3,4],
 		"index2":["all",1,15,30],
 		"servovalue":[0,45,90,135,180],
@@ -112,10 +108,6 @@
 		"Off":0,
 		"LOW":0,
 		"HIGH":1,
-		"Press":1,
-		"Release":0,
-		"Focus On":3,
-		"Focus Off":2,
 		"Slot1":1,
 		"Slot2":2,
 		"Port1":1,
@@ -138,7 +130,6 @@
 		"sevseg":9,
 		"led":8,
 		"lightsensor":3,
-		"shutter":20,
 		"ultrasonic":1,
 		"linefollower":17,
 		"joystick":5,
