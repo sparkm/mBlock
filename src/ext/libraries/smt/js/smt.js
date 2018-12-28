@@ -170,26 +170,6 @@
 		}
 		getPackage(nextID,deviceId,port);
     };
-	ext.getLimitswitch = function(nextID,port,slot) {
-		var deviceId = 21;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		if(typeof slot=="string"){
-			slot = slots[slot];
-		}
-		if(checkPortAndSlot(port, slot, "Limit switch")){
-			return;
-		}
-		getPackage(nextID,deviceId,port,slot);
-    };
-	ext.getPirmotion = function(nextID,port) {
-		var deviceId = 15;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
-    };
 	ext.getGyro = function(nextID,ax) {
 		var deviceId = 6;
 		if(typeof ax=="string"){

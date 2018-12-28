@@ -30,12 +30,6 @@
 		["R", "infrared receiver %d.bluePorts","getInfrared","Port3",
 		{"encode":"{d0}","setup":"ir_{0}.begin();\n","inc":"","def":"MeInfraredReceiver ir_{0}({0});\n","work":"ir_{0}.getCode()","loop":"ir_{0}.loop();\n"}],
 		
-		["B", "limit switch %d.normalPort %d.slot","getLimitswitch","Port6","Slot1",
-		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeLimitSwitch sw_{0}_{1}({0},{1});\n","work":"sw_{0}_{1}.touched()","loop":""}],
-		
-		["B", "pir motion sensor %d.bluePorts","getPirmotion","Port3",
-		{"encode":"{d0}","setup":"","inc":"","def":"MePIRMotionSensor pir_{0}({0});\n","work":"pir_{0}.isHumanDetected()","loop":""}],
-		
 		["R", "3-axis gyro %d.GyroAxis angle","getGyro","X-Axis",
 		{"encode":"{d0}","setup":"gyro.begin();\n","inc":"","def":"MeGyro gyro;\n","work":"gyro.getAngle({0})","loop":"gyro.update();\n"}],
 		
@@ -62,8 +56,7 @@
 		"motorPort":["Port1","Port2","Port9","Port10"],
 		"servoPort":["Port3","Port4","Port6","Port7","Port8"],
 		"slot":["Slot1","Slot2"],
-		"device":["Ultrasonic","Line Finder","Light Sensor","Sound Sensor","Joystick","Button","Potentiometer"],
-		"exdevice":["LimitSwitch","Temperature"],
+		"device":["Ultrasonic","Line Finder","Button"],
 		"mode":["Input","Output"],
 		"type":["Digital","Analog"],
 		"Axis":["X-Axis","Y-Axis"],
@@ -109,8 +102,6 @@
 		"ultrasonic":1,
 		"linefollower":17,
 		"infrared":16,
-		"limitswitch":21,
-		"pirmotion":15,
 		"gyro":6,
 		"time":0,
 		"turns":1,
