@@ -156,39 +156,8 @@
 		}
 		getPackage(nextID,deviceId,port);
 	};
-	ext.getPotentiometer = function(nextID,port) {
-		var deviceId = 4;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
-    };
 	ext.getLinefollower = function(nextID,port) {
 		var deviceId = 17;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
-    };
-	ext.getLightsensor = function(nextID,port) {
-		var deviceId = 3;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(nextID,deviceId,port);
-    };
-	ext.getJoystick = function(nextID,port,ax) {
-		var deviceId = 5;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		if(typeof ax=="string"){
-			ax = axis[ax];
-		}
-		getPackage(nextID,deviceId,port,ax);
-    };
-	ext.getSoundsensor = function(nextID,port) {
-		var deviceId = 7;
 		if(typeof port=="string"){
 			port = ports[port];
 		}

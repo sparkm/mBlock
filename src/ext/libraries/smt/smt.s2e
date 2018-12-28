@@ -27,15 +27,6 @@
 		["R", "line follower %d.bluePorts","getLinefollower","Port3",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeLineFollower linefollower_{0}({0});\n","work":"linefollower_{0}.readSensors()","loop":""}],
 		
-		["R", "joystick %d.blackPorts %d.Axis","getJoystick","Port7","X-Axis",
-		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeJoystick joystick_{0}({0});\n","work":"joystick_{0}.read({1})","loop":""}],
-		
-		["R", "potentiometer %d.blackPorts","getPotentiometer","Port7",
-		{"encode":"{d0}","setup":"","inc":"","def":"MePotentiometer potentiometer_{0}({0});\n","work":"potentiometer_{0}.read()","loop":""}],
-		
-		["R", "sound sensor %d.soundPort","getSoundsensor","Port7",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeSoundSensor soundsensor_{0}({0});\n","work":"soundsensor_{0}.strength()","loop":""}],
-		
 		["R", "infrared receiver %d.bluePorts","getInfrared","Port3",
 		{"encode":"{d0}","setup":"ir_{0}.begin();\n","inc":"","def":"MeInfraredReceiver ir_{0}({0});\n","work":"ir_{0}.getCode()","loop":"ir_{0}.loop();\n"}],
 		
@@ -117,9 +108,6 @@
 		"led":8,
 		"ultrasonic":1,
 		"linefollower":17,
-		"joystick":5,
-		"potentiometer":4,
-		"soundsensor":7,
 		"infrared":16,
 		"limitswitch":21,
 		"pirmotion":15,
