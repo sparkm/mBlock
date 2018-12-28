@@ -19,9 +19,6 @@
 		["w", "set led %d.lport %d.index red%d.value green%d.value blue%d.value","runLed", "Port3","all",0,0,0,
 		{"encode":"{d0}{d1}{d2}{d3}{d4}","setup":"","inc":"","def":"MeRGBLed rgbled_{0}({0}, 4);\n","work":"rgbled_{0}.setColor({1},{2},{3},{4});\nrgbled_{0}.show();\n","loop":""}],
 		
-		["w", "set light sensor %d.blackPorts led as %d.switch","runLightsensor", "Port7", "On",
-		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeLightSensor lightsensor_{0}({0});\n","work":"lightsensor_{0}.dWrite1({1});\n","loop":""}],
-		
 		["-"],
 		
 		["R", "ultrasonic sensor %d.whitePorts distance","getUltrasonic","Port3",
@@ -29,9 +26,6 @@
 		
 		["R", "line follower %d.bluePorts","getLinefollower","Port3",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeLineFollower linefollower_{0}({0});\n","work":"linefollower_{0}.readSensors()","loop":""}],
-		
-		["R", "light sensor %d.laport","getLightsensor","Port7",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeLightSensor lightsensor_{0}({0});\n","work":"lightsensor_{0}.read()","loop":""}],
 		
 		["R", "joystick %d.blackPorts %d.Axis","getJoystick","Port7","X-Axis",
 		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeJoystick joystick_{0}({0});\n","work":"joystick_{0}.read({1})","loop":""}],
@@ -121,7 +115,6 @@
 		"servo":11,
 		"sevseg":9,
 		"led":8,
-		"lightsensor":3,
 		"ultrasonic":1,
 		"linefollower":17,
 		"joystick":5,

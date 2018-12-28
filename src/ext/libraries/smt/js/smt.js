@@ -117,12 +117,6 @@
 		}
 		runPackage(8,port,slot,ledIndex=="all"?0:ledIndex,red,green,blue);
 	};
-	ext.runLightsensor = function(port,status){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		runPackage(3,port,switchStatus[status]);
-	};
 	ext.showCharacters = function(port,x,y,message){
 		if(typeof port=="string"){
 			port = ports[port];
