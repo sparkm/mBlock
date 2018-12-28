@@ -71,13 +71,6 @@
 	ext.runArduino = function(){
 		responseValue();
 	};
-	ext.getTouchSensor = function(port){
-    	var deviceId = 51;
-    	if(typeof port=="string"){
-			port = ports[port];
-		}
-		getPackage(0,deviceId,port);
-    };
     ext.getButton = function(port, key){
     	var deviceId = 22;
     	if(typeof port=="string"){
@@ -233,19 +226,6 @@
 			port = ports[port];
 		}
 		getPackage(nextID,deviceId,port);
-    };
-	ext.getTemperature = function(nextID,port,slot) {
-		var deviceId = 2;
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		if(typeof slot=="string"){
-			slot = slots[slot];
-		}
-		if(checkPortAndSlot(port, slot, "Temperature")){
-			return;
-		}
-		getPackage(nextID,deviceId,port,slot);
     };
 	ext.getGyro = function(nextID,ax) {
 		var deviceId = 6;
