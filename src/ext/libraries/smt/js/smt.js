@@ -17,28 +17,33 @@
         Port8: 8,
         Port9: 9,
         Port10: 10,
-		M1:9,
-		M2:10
+	M1:9,
+	M2:10
     };
+
     var button_keys = {
-		"key1":1,
-		"key2":2,
-		"key3":3,
-		"key4":4
-	};
-	var slots = {
-		Slot1:1,
-		Slot2:2
-	};
-	var switchStatus = {
-		On:1,
-		Off:0
-	};
-	var axis = {
-		'X-Axis':1,
-		'Y-Axis':2,
-		'Z-Axis':3
-	}
+	"key1":1,
+	"key2":2,
+	"key3":3,
+	"key4":4
+    };
+
+    var slots = {
+	Slot1:1,
+	Slot2:2
+    };
+
+    var switchStatus = {
+	On:1,
+	Off:0
+    };
+
+    var axis = {
+	'X-Axis':1,
+	'Y-Axis':2,
+	'Z-Axis':3
+    }
+
     var inputs = {
         slider: 0,
         light: 0,
@@ -49,22 +54,51 @@
         'resistance-C': 0,
         'resistance-D': 0
     };
+
+    var ircodes = {
+	"A":69,
+	"B":70,
+	"C":71,
+	"D":68,
+	"E":67,
+	"F":13,
+	"↑":64,
+	"↓":25,
+	"←":7,
+	"→":9,
+	"Setting":21,
+	"R0":22,
+	"R1":12,
+	"R2":24,
+	"R3":94,
+	"R4":8,
+	"R5":28,
+	"R6":90,
+	"R7":66,
+	"R8":82,
+	"R9":74
+    };
+
     function checkPortAndSlot(port, slot, sensor){
     	if((port == 4 || port == 6) && slot == 1){
-			interruptThread(sensor + " not support Slot1 on Port" + port);
-			return true;
-		}
-		return false;
+		interruptThread(sensor + " not support Slot1 on Port" + port);
+		return true;
+	}
+	return false;
     }
-	var values = {};
-	var indexs = [];
-	var versionIndex = 0xFA;
+
+    var values = {};
+    var indexs = [];
+    var versionIndex = 0xFA;
+
     ext.resetAll = function(){
     	_device.send([0xff, 0x55, 2, 0, 4]);
     };
-	ext.runArduino = function(){
-		responseValue();
-	};
+
+    ext.runArduino = function(){
+	responseValue();
+    };
+
     ext.getButton = function(port, key){
     	var deviceId = 22;
     	if(typeof port=="string"){
@@ -75,13 +109,23 @@
 		}
 		getPackage(0,deviceId,port, key);
     };
+
+	ext.getIrRemote = function(nextID,code){
+		var deviceId = 14;
+		if(typeof code=="string"){
+			code = ircodes[code];
+		}
+		getPackage(nextID,deviceId,0,code);
+	}
+
 	ext.runMotor = function(port,speed) {
 		if(typeof port=="string"){
 			port = ports[port];
 		}
-        runPackage(10,port,_util.short2array(speed));
-    };
-    ext.runServo = function(port,slot,angle) {
+	        runPackage(10,port,_util.short2array(speed));
+    	};
+
+        ext.runServo = function(port,slot,angle) {
 		if(typeof port=="string"){
 			port = ports[port];
 		}
@@ -94,11 +138,13 @@
 		if(checkPortAndSlot(port, slot, "Servo")){
 			return;
 		}
-        runPackage(11,port,slot,angle);
-    };
+   	        runPackage(11,port,slot,angle);
+    	};
+
 	ext.runLed = function(port,ledIndex,red,green,blue){
 		ext.runLedStrip(port, 2, ledIndex, red,green,blue);
 	};
+
 	ext.runLedStrip = function(port,slot,ledIndex,red,green,blue){
 		if(typeof port=="string"){
 			port = ports[port];
@@ -111,6 +157,7 @@
 		}
 		runPackage(8,port,slot,ledIndex=="all"?0:ledIndex,red,green,blue);
 	};
+
 	ext.getUltrasonic = function(nextID,port){
 		var deviceId = 1;
 		if(typeof port=="string"){
@@ -118,29 +165,33 @@
 		}
 		getPackage(nextID,deviceId,port);
 	};
+
 	ext.getLinefollower = function(nextID,port) {
 		var deviceId = 17;
 		if(typeof port=="string"){
 			port = ports[port];
 		}
 		getPackage(nextID,deviceId,port);
-    };
+        };
+
 	ext.getInfrared = function(nextID,port) {
 		var deviceId = 16;
 		if(typeof port=="string"){
 			port = ports[port];
 		}
 		getPackage(nextID,deviceId,port);
-    };
+        };
+
 	ext.getGyro = function(nextID,ax) {
 		var deviceId = 6;
 		if(typeof ax=="string"){
 			ax = axis[ax];
 		}
 		getPackage(nextID,deviceId,0,ax);
-    };
-    var startTimer = 0;
-    ext.getTimer = function(nextID){
+        };
+    
+        var startTimer = 0;
+        ext.getTimer = function(nextID){
 		if(startTimer==0){
 			startTimer = (new Date().getTime())/1000.0;
 		}
@@ -174,10 +225,10 @@
 		sendPackage(arguments, 1);
 	}
     
-    var inputArray = [];
+        var inputArray = [];
 	var _isParseStart = false;
 	var _isParseStartIndex = 0;
-    ext.processData = function(bytes) {
+        ext.processData = function(bytes) {
 		var len = bytes.length;
 		if(_rxBuf.length>30){
 			_rxBuf = [];
