@@ -109,12 +109,6 @@
 		}
         runPackage(11,port,slot,angle);
     };
-	ext.runSevseg = function(port,display){
-		if(typeof port=="string"){
-			port = ports[port];
-		}
-		runPackage(9,port,_util.float2array(display));
-	};
 	ext.runLed = function(port,ledIndex,red,green,blue){
 		ext.runLedStrip(port, 2, ledIndex, red,green,blue);
 	};

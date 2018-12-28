@@ -16,9 +16,6 @@
 		["w", "set servo %d.servoPort %d.slot angle %d.servovalue","runServo", "Port3","Slot1", 90,
 		{"encode":"{d0}{d1}{d2}","setup":"servo_{0}_{1}.attach(port_{0}.pin{1}());\n","inc":"","def":"Servo servo_{0}_{1};\nMePort port_{0}({0});\n","work":"servo_{0}_{1}.write({2});\n","loop":""}],
 		
-		["w", "set 7-segments display%d.bluePorts number %n","runSevseg", "Port3", 100,
-		{"encode":"{d0}{f1}","setup":"","inc":"","def":"Me7SegmentDisplay seg7_{0}({0});\n","work":"seg7_{0}.display((float){1});\n","loop":""}],
-		
 		["w", "set led %d.lport %d.index red%d.value green%d.value blue%d.value","runLed", "Port3","all",0,0,0,
 		{"encode":"{d0}{d1}{d2}{d3}{d4}","setup":"","inc":"","def":"MeRGBLed rgbled_{0}({0}, 4);\n","work":"rgbled_{0}.setColor({1},{2},{3},{4});\nrgbled_{0}.show();\n","loop":""}],
 		
