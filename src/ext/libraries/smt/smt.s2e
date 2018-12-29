@@ -21,7 +21,7 @@
 		
 		["-"],
 		
-		["R", "ultrasonic sensor %d.whitePorts distance","getUltrasonic","Port3",
+		["R", "ultrasonic sensor %d.UltrasonicPorts distance","getUltrasonic","Port3",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeUltrasonicSensor ultrasonic_{0}({0});\n","work":"ultrasonic_{0}.distanceCm()","loop":""}],
 		
 		["R", "line follower %d.bluePorts","getLinefollower","Port3",
@@ -50,6 +50,7 @@
     	"menus": {
     		"yellowPorts":["Port3","Port4","Port6","Port7","Port8"],
     		"bluePorts":["Port3","Port7","Port8"],
+    		"UltrasonicPorts":["Port3"],
     		"grayPorts":["Port5"],
     		"whitePorts":["Port3","Port4","Port6","Port7","Port8"],
     		"blackPorts":["Port7","Port8"],
