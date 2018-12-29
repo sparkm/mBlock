@@ -17,8 +17,9 @@
         Port8: 8,
         Port9: 9,
         Port10: 10,
-	M1:9,
-	M2:10
+        Port11: 11,
+        Port12: 12,
+        Port13: 13,
     };
 
     var button_keys = {
