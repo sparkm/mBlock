@@ -55,18 +55,18 @@
     };
 
     var ircodes = {
-	"A":69,
-	"B":70,
-	"C":71,
-	"D":68,
-	"E":67,
-	"F":13,
-	"↑":64,
-	"↓":25,
-	"←":7,
-	"→":9,
-	"Setting":21,
+	"CH-":69,
+	"CH":70,
+	"CH+":71,
+	"<<":68,
+	">>":64,
+	">":67,
+	"-":7,
+	"+":21,
+	"EQ":9,
 	"R0":22,
+	"100+":25,
+	"200+":13,
 	"R1":12,
 	"R2":24,
 	"R3":94,
@@ -114,7 +114,7 @@
 		if(typeof code=="string"){
 			code = ircodes[code];
 		}
-		getPackage(nextID,deviceId,0,code);
+		getPackage(nextID,deviceId,4,code); //Port hardcoded to 4 in the firmware. This parameter is being ignored for now.
 	}
 
 	ext.runMotor = function(port,speed) {

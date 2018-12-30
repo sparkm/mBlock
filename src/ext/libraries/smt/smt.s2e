@@ -34,7 +34,7 @@
 		
 		["B", "button %d.blackPorts %m.button_key pressed","getButton","Port7","key1",{"encode":"{d0}","setup":"","inc":"","def":"Me4Button buttonSensor_{0}({0});\n","work":"(buttonSensor_{0}.pressed()=={1})","loop":"buttonSensor_{0}.pressed();"}],
 
-		["B","ir remote %m.ircode pressed","getIrRemote","A",
+		["B","ir remote %m.ircode pressed","getIrRemote","CH-",
 		{"encode":"{n0}{d0}","setup":"ir.begin();\n","inc":"","def":"MeIR ir;\n","work":"ir.keyPressed({0})","loop":"ir.loop();\n"}],
 		
 		["-"],
@@ -54,7 +54,7 @@
     		"whitePorts":["Port3","Port4","Port6","Port7","Port8"],
     		"blackPorts":["Port7","Port8"],
 		"normalPort":["Port3","Port4","Port6","Port7","Port8"],
-		"lport":["Port4","Port5","Port6","Port7","Port8","Port9","Port10","Port11"],
+		"lport":["Port5","Port6","Port7","Port8","Port9","Port10","Port11"],
 		"motorPort":["Port1","Port2"],
 		"servoPort":["Port3","Port4","Port6","Port7","Port8"],
 		"slot":["Slot1","Slot2"],
@@ -71,7 +71,7 @@
 		"motorvalue":[255,100,50,0,-50,-100,-255],
 		"value":[0,20,60,150,255],
 		"button_key":["key1","key2","key3","key4"],
-		"ircode":["A","B","C","D","E","F","↑","↓","←","→","Setting","R0","R1","R2","R3","R4","R5","R6","R7","R8","R9"],
+		"ircode":["CH-","CH","CH+","<<",">>",">","-","+","EQ","R0","100+","200+","R1","R2","R3","R4","R5","R6","R7","R8","R9"],
         },
 	"values":{
 		"all":0,
