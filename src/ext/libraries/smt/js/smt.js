@@ -17,9 +17,7 @@
         Port8: 8,
         Port9: 9,
         Port10: 10,
-        Port11: 11,
-        Port12: 12,
-        Port13: 13,
+        Port11: 11
     };
 
     var button_keys = {
@@ -103,12 +101,12 @@
     ext.getButton = function(port, key){
     	var deviceId = 22;
     	if(typeof port=="string"){
-			port = ports[port];
-		}
-		if(typeof key == "string"){
-			key = button_keys[key];
-		}
-		getPackage(0,deviceId,port, key);
+		port = ports[port];
+	}
+	if(typeof key == "string"){
+		key = button_keys[key];
+	}
+	getPackage(0,deviceId,port, key);
     };
 
 	ext.getIrRemote = function(nextID,code){
@@ -123,7 +121,8 @@
 		if(typeof port=="string"){
 			port = ports[port];
 		}
-	        runPackage(10,port,_util.short2array(speed));
+//	        runPackage(10,port,_util.short2array(speed));
+	        runPackage(10,port,speed,(speed>>8));
     	};
 
         ext.runServo = function(port,slot,angle) {

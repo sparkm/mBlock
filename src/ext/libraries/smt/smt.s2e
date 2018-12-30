@@ -15,7 +15,6 @@
 		
 		["w", "set servo %d.servoPort %d.slot angle %d.servovalue","runServo", "Port3","Slot1", 90,
 		{"encode":"{d0}{d1}{d2}","setup":"servo_{0}_{1}.attach(port_{0}.pin{1}());\n","inc":"","def":"Servo servo_{0}_{1};\nMePort port_{0}({0});\n","work":"servo_{0}_{1}.write({2});\n","loop":""}],
-		
 		["w", "set led %d.lport %d.index red%d.value green%d.value blue%d.value","runLed", "Port4","all",0,0,0,
 		{"encode":"{d0}{d1}{d2}{d3}{d4}","setup":"","inc":"","def":"MeRGBLed rgbled_{0}({0}, 6);\n","work":"rgbled_{0}.setColor({1},{2},{3},{4});\nrgbled_{0}.show();\n","loop":""}],
 		
@@ -55,8 +54,8 @@
     		"whitePorts":["Port3","Port4","Port6","Port7","Port8"],
     		"blackPorts":["Port7","Port8"],
 		"normalPort":["Port3","Port4","Port6","Port7","Port8"],
-		"lport":["Port4","Port5","Port6","Port7","Port8","Port9","Port10","Port11","Port12","Port13"],
-		"motorPort":["Port1","Port2","Port9","Port10"],
+		"lport":["Port4","Port5","Port6","Port7","Port8","Port9","Port10","Port11"],
+		"motorPort":["Port1","Port2"],
 		"servoPort":["Port3","Port4","Port6","Port7","Port8"],
 		"slot":["Slot1","Slot2"],
 		"device":["Ultrasonic","Line Finder","Button"],
@@ -93,8 +92,6 @@
 		"Port9":9,
 		"Port10":10,
 		"Port11":11,
-		"Port12":12,
-		"Port13":13,
 		"X-Axis":1,
 		"Y-Axis":2,
 		"Z-Axis":3,
