@@ -13,37 +13,16 @@
 		["w", "set motor%d.motorPort speed %d.motorvalue","runMotor", "Port1", 0,
 		{"encode":"{d0}{s1}","setup":"","inc":"","def":"MeDCMotor motor_{0}({0});\n","work":"motor_{0}.run({1});\n","loop":""}],
 		
-		["w", "set servo %d.servoPort %d.slot angle %d.servovalue","runServo", "Port3","Slot1", 90,
-		{"encode":"{d0}{d1}{d2}","setup":"servo_{0}_{1}.attach(port_{0}.pin{1}());\n","inc":"","def":"Servo servo_{0}_{1};\nMePort port_{0}({0});\n","work":"servo_{0}_{1}.write({2});\n","loop":""}],
 		["w", "set led %d.lport %d.index red%d.value green%d.value blue%d.value","runLed", "Port4","all",0,0,0,
 		{"encode":"{d0}{d1}{d2}{d3}{d4}","setup":"","inc":"","def":"MeRGBLed rgbled_{0}({0}, 6);\n","work":"rgbled_{0}.setColor({1},{2},{3},{4});\nrgbled_{0}.show();\n","loop":""}],
 		
 		["-"],
 		
-		["R", "ultrasonic sensor %d.UltrasonicPorts distance","getUltrasonic","Port3",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeUltrasonicSensor ultrasonic_{0}({0});\n","work":"ultrasonic_{0}.distanceCm()","loop":""}],
-		
 		["R", "line follower %d.bluePorts","getLinefollower","Port3",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeLineFollower linefollower_{0}({0});\n","work":"linefollower_{0}.readSensors()","loop":""}],
 		
-		["R", "infrared receiver %d.bluePorts","getInfrared","Port3",
-		{"encode":"{d0}","setup":"ir_{0}.begin();\n","inc":"","def":"MeInfraredReceiver ir_{0}({0});\n","work":"ir_{0}.getCode()","loop":"ir_{0}.loop();\n"}],
-		
-		["R", "3-axis gyro %d.GyroAxis angle","getGyro","X-Axis",
-		{"encode":"{d0}","setup":"gyro.begin();\n","inc":"","def":"MeGyro gyro;\n","work":"gyro.getAngle({0})","loop":"gyro.update();\n"}],
-		
-		["B", "button %d.blackPorts %m.button_key pressed","getButton","Port7","key1",{"encode":"{d0}","setup":"","inc":"","def":"Me4Button buttonSensor_{0}({0});\n","work":"(buttonSensor_{0}.pressed()=={1})","loop":"buttonSensor_{0}.pressed();"}],
-
 		["B","ir remote %m.ircode pressed","getIrRemote","CH-",
 		{"encode":"{n0}{d0}","setup":"ir.begin();\n","inc":"","def":"MeIR ir;\n","work":"ir.keyPressed({0})","loop":"ir.loop();\n"}],
-		
-		["-"],
-		
-		["R", "timer","getTimer", "0",
-		{"encode":"{n0}","setup":"","inc":"","def":"double currentTime = 0;\ndouble lastTime = 0;\ndouble getLastTime(){\n\treturn currentTime = millis()/1000.0 - lastTime;\n}\n","work":"getLastTime()","loop":""}],
-		
-		["w", "reset timer","resetTimer", "0",
-		{"encode":"{n0}","setup":"","inc":"","def":"double currentTime = 0;\ndouble lastTime = 0;\n","work":"lastTime = millis()/1000.0;\n","loop":""}]
 		
         ],
     	"menus": {
