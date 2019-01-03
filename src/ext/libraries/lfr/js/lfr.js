@@ -141,6 +141,16 @@
    	        runPackage(11,port,slot,angle);
     	};
 
+	ext.runBuzzer = function(tone, beat){
+		if(typeof tone == "string"){
+			tone = tones[tone];
+		}
+		if(typeof beat == "string"){
+			beat = parseInt(beat) || beats[beat];
+		}
+		runPackage(34,tone,(tone>>8),beat,(beat>>8));
+	};
+
 	ext.runLed = function(port,ledIndex,red,green,blue){
 		ext.runLedStrip(port, 2, ledIndex, red,green,blue);
 	};
@@ -168,6 +178,14 @@
 
 	ext.getLinefollower = function(nextID,port) {
 		var deviceId = 17;
+		if(typeof port=="string"){
+			port = ports[port];
+		}
+		getPackage(nextID,deviceId,port);
+        };
+
+	ext.getPhotoResistor = function(nextID,port) {
+		var deviceId = 27;
 		if(typeof port=="string"){
 			port = ports[port];
 		}
