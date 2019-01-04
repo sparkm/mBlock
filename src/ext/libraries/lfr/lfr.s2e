@@ -19,11 +19,11 @@
 		{"encode":"{d0}{d1}{d2}{d3}{d4}","setup":"","inc":"","def":"MeRGBLed rgbled_{0}({0}, 6);\n","work":"rgbled_{0}.setColor({1},{2},{3},{4});\nrgbled_{0}.show();\n","loop":""}],
 		["-"],
 		
-		["w", "play tone on note %d.note beat %d.beats","runBuzzer", "C4", "Half",
+		["w", "play tone %d.tport note %d.note beat %d.beats","runBuzzer", "Port4", "C4", "Half",
 		{"encode":"{s0}","setup":"","inc":"","def":"MeBuzzer buzzer;\n","work":"buzzer.tone({0}, {1});\ndelay(20);\n","loop":""}],
 		["-"],
 
-		["R", "line follower %d.linePorts","getLinefollower","Port9",
+		["R", "line follower %d.linePorts","getLineFollower","Port9",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeLineFollower linefollower_{0}({0});\n","work":"linefollower_{0}.readSensors()","loop":""}],
 		["-"],
 		
@@ -45,6 +45,7 @@
     		"blackPorts":["Port7","Port8"],
 		"normalPort":["Port3","Port4","Port6","Port7","Port8"],
 		"lport":["Port3","Port4","Port5","Port6","Port7","Port8","Port9"],
+		"tport":["Port1","Port2","Port3","Port4","Port5","Port6","Port7","Port8","Port9"],
 		"motorPort":["Port1","Port2"],
 		"servoPort":["Port3","Port4","Port6","Port7","Port8"],
 		"slot":["Slot1","Slot2"],
