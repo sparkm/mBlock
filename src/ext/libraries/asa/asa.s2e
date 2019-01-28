@@ -15,6 +15,9 @@
 		{"encode":"{d0}{s1}","setup":"","inc":"","def":"MeDCMotor motor_{0}({0});\n","work":"motor_{0}.run({1});\n","loop":""}],
 		["-"],
 		
+		["w", "set laser %d.tport as %d.switch","runLaserTransmit", "Port4", "On",
+		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeDigitalOutput laserxmit_{0}({0});\n","work":"laserxmit_{0}.on({1});\n","loop":""}],
+		
 		["w", "set led %d.lport %d.index red%d.value green%d.value blue%d.value","runLed", "Port5","all",0,0,0,
 		{"encode":"{d0}{d1}{d2}{d3}{d4}","setup":"","inc":"","def":"MeRGBLed rgbled_{0}({0}, 5);\n","work":"rgbled_{0}.setColor({1},{2},{3},{4});\nrgbled_{0}.show();\n","loop":""}],
 		["-"],
@@ -58,6 +61,9 @@
 		["R", "temperature sensor %d.analogPorts","getAnalogInput","Port8",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeAnaloginput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
 		["-"],
+		
+		["R", "joystick %d.linePorts %d.Axis","getJoystick","Port9","X-Axis",
+		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeJoystick joystick_{0}({0});\n","work":"joystick_{0}.read({1})","loop":""}],
 		
 		["B","ir remote %m.ircode pressed","getIrRemote","CH-",
 		{"encode":"{n0}{d0}","setup":"ir.begin();\n","inc":"","def":"MeIR ir(PORT_10);\n","work":"ir.keyPressed({0})","loop":"ir.loop();\n"}],

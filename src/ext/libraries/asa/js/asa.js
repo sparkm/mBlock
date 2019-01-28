@@ -181,6 +181,13 @@
 		runPackage(8,port,slot,ledIndex=="all"?0:ledIndex,red,green,blue);
 	};
 
+	ext.runLaserTransmit = function(port,status){
+		if(typeof port=="string"){
+			port = ports[port];
+		}
+		runPackage(30,port,switchStatus[status]);
+	};
+
 	ext.getUltrasonic = function(nextID,port){
 		var deviceId = 1;
 		if(typeof port=="string"){
@@ -220,6 +227,17 @@
 		}
 		getPackage(nextID,deviceId,port);
         };
+
+	ext.getJoystick = function(nextID,port,ax) {
+		var deviceId = 5;
+		if(typeof port=="string"){
+			port = ports[port];
+		}
+		if(typeof ax=="string"){
+			ax = axis[ax];
+		}
+		getPackage(nextID,deviceId,port,ax);
+    };
 
 	ext.getInfrared = function(nextID,port) {
 		var deviceId = 16;
