@@ -135,20 +135,14 @@
 	        runPackage(10,port,speed,(speed>>8));
     	};
 
-        ext.runServo = function(port,slot,angle) {
+        ext.runServo = function(port,angle) {
 		if(typeof port=="string"){
 			port = ports[port];
-		}
-		if(typeof slot=="string"){
-			slot = slots[slot];
 		}
 		if(angle > 180){
 			angle = 180;
 		}
-		if(checkPortAndSlot(port, slot, "Servo")){
-			return;
-		}
-   	        runPackage(11,port,slot,angle);
+   	        runPackage(11,port,angle);
     	};
 
 	ext.runBuzzer = function(port, tone, beat){
