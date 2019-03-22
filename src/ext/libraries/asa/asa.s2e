@@ -37,28 +37,28 @@
 		{"encode":"{d0}","setup":"","inc":"","def":"MeDigitalInput digitalinput_{0}({0});\n","work":"digitalinput_{0}.read()","loop":""}],
 		
 		["R", "metal touch sensor %d.analogPorts","getAnalogInput","Port8",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeAnaloginput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
+		{"encode":"{d0}","setup":"","inc":"","def":"MeAnalogInput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
 		["-"],
 		
 		["B", "flame sensor %d.digitalPorts","getDigitalInput","Port8",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeDigitalInput digitalinput_{0}({0});\n","work":"digitalinput_{0}.read()","loop":""}],
 		
 		["R", "flame sensor %d.analogPorts","getAnalogInput","Port8",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeAnaloginput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
+		{"encode":"{d0}","setup":"","inc":"","def":"MeAnalogInput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
 		["-"],
 		
 		["B", "sound sensor %d.digitalPorts","getDigitalInput","Port8",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeDigitalInput digitalinput_{0}({0});\n","work":"digitalinput_{0}.read()","loop":""}],
 		
 		["R", "sound sensor %d.analogPorts","getAnalogInput","Port8",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeAnaloginput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
+		{"encode":"{d0}","setup":"","inc":"","def":"MeAnalogInput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
 		["-"],
 		
 		["B", "temperature sensor %d.digitalPorts","getDigitalInput","Port8",
 		{"encode":"{d0}","setup":"","inc":"","def":"MeDigitalInput digitalinput_{0}({0});\n","work":"digitalinput_{0}.read()","loop":""}],
 		
 		["R", "temperature sensor %d.analogPorts","getAnalogInput","Port8",
-		{"encode":"{d0}","setup":"","inc":"","def":"MeAnaloginput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
+		{"encode":"{d0}","setup":"","inc":"","def":"MeAnalogInput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
 		["-"],
 		
 		["R", "joystick %d.linePorts %d.Axis","getJoystick","Port9","X-Axis",
