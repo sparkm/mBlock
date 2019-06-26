@@ -12,7 +12,7 @@
 		["-"],
 		
 		["w", "set servo %d.servoPort angle %d.servovalue","runServo", "Port5", 90,
-		{"encode":"{d0}{d1}{d2}","setup":"servo_{0}_{1}.attach(port_{0}.pin{1}());\n","inc":"","def":"Servo servo_{0}_{1};\nMePort port_{0}({0});\n","work":"servo_{0}_{1}.write({2});\n","loop":""}],
+		{"encode":"{d0}{d1}","setup":"servo_{0}.attach(mePort[{0}]._pin_0);\n","inc":"","def":"Servo servo_{0};\n","work":"servo_{0}.write({1});\n","loop":""}],
 		
 		["w", "set laser %d.tport as %d.switch","runLaserTransmit", "Port4", "On",
 		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeDigitalOutput laserxmit_{0}({0});\n","work":"laserxmit_{0}.on({1});\n","loop":""}],
@@ -61,6 +61,9 @@
 		{"encode":"{d0}","setup":"","inc":"","def":"MeAnalogInput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
 		["-"],
 		
+		["R", "joystick %d.joystickPorts","getAnalogInput","Port6",
+		{"encode":"{d0}","setup":"","inc":"","def":"MeAnalogInput analoginput_{0}({0});\n","work":"analoginput_{0}.read()","loop":""}],
+		
 		["R", "joystick %d.linePorts %d.Axis","getJoystick","Port9","X-Axis",
 		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeJoystick joystick_{0}({0});\n","work":"joystick_{0}.read({1})","loop":""}],
 		
@@ -74,6 +77,7 @@
     		"photoPorts":["Port3","Port5"],
     		"digitalPorts":["Port6","Port8"],
     		"analogPorts":["Port6","Port8"],
+    		"joystickPorts":["Port6","Port7","Port8","Port9"],
     		"UltrasonicPorts":["Port3"],
     		"grayPorts":["Port5"],
     		"whitePorts":["Port3","Port4","Port6","Port7","Port8"],
@@ -82,7 +86,7 @@
 		"lport":["Port3","Port5"],
 		"tport":["Port4","Port7"],
 		"motorPort":["Port1","Port2"],
-		"servoPort":["Port5"],
+		"servoPort":["Port5","Port1","Port2","Port4"],
 		"slot":["Slot1","Slot2"],
 		"device":["Ultrasonic","Line Finder","Button"],
 		"mode":["Input","Output"],
